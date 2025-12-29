@@ -12,13 +12,24 @@ df=pd.DataFrame(data)
 # print(df.dtypes)
 # print(df.describe())
 # print(df.info)
-# print(df.isnull().sum())
+print(df.isnull().sum())
 # missingno.matrix(df)
 # plt.show()
 ##############################################
-df["benefit"] = 150-df['TV']
-print(df.head(10).to_string())
+df["benefit-TV"] = 150-df['TV']
+# print(df.head(10).to_string())
+# print(df.corr())
 
+from sklearn.preprocessing import LabelEncoder,StandardScaler,MinMaxScaler
+
+le=LabelEncoder()
+df['benefil1'] = le.fit_transform(df['benefit-TV'])
+# print(df.columns)
+
+
+X = df.drop('sales',axis=1)
+Y = df['sales']
+print(X.head(10).to_string())
 
 
 
