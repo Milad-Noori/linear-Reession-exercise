@@ -29,8 +29,13 @@ df['benefil1'] = le.fit_transform(df['benefit-TV'])
 
 X = df.drop('sales',axis=1)
 Y = df['sales']
-print(X.head(10).to_string())
+# print(X.head(10).to_string())
 
+
+
+ss =StandardScaler()
+ss_scal=ss.fit_transform(X)
+print(ss_scal)
 
 
 
