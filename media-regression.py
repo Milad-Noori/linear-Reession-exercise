@@ -48,7 +48,7 @@ X_train, X_test, Y_train, Y_test= train_test_split(ss_scal,Y ,test_size=0.20 ,ra
 lr=LinearRegression()
 lr.fit(X_train , Y_train)
 y_pred=lr.predict(X_test)
-print(y_pred)
+# print(y_pred)
 
 
 print('mae :', mean_absolute_error(Y_test,y_pred))
@@ -57,3 +57,17 @@ print('rmse :', np.sqrt(mean_squared_error(Y_test,y_pred)))
 print('R2score :', r2_score(Y_test,y_pred)*100)
 
 
+
+
+# newdata = [[50, 2, 1, 23, 1, 0, 8, 1]]
+# final_model = LinearRegression()
+# final_model.fit(X.values, Y)
+# print(final_model.predict(newdata))
+
+from joblib import dump, load
+dump(y_pred, 'Titanic_app')
+print(final_model.predict(newdata))
+
+from tkinter import *
+from tkinter import messagebox as msg, StringVar
+from tkinter import ttk as ttk
