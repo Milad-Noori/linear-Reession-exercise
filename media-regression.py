@@ -65,9 +65,15 @@ print('R2score :', r2_score(Y_test,y_pred)*100)
 # print(final_model.predict(newdata))
 
 from joblib import dump, load
-dump(y_pred, 'Titanic_app')
+dump(y_pred, 'media-app')
 print(final_model.predict(newdata))
 
 from tkinter import *
 from tkinter import messagebox as msg, StringVar
 from tkinter import ttk as ttk
+
+
+my_form = Tk()
+my_form.geometry("400x400")
+my_form.title('media-app')
+my_form.resizable(False, False)
